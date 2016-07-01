@@ -12,7 +12,7 @@
         <!--First View Controller-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="Water" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="WaterManagement" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
@@ -151,7 +151,7 @@
         <!--ANALYSIS-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="Water" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="WaterManagement" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L7p-HK-0SC"/>
                         <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
@@ -209,10 +209,6 @@
                                     <color key="titleColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wVF-iD-6lj" customClass="NiceButton" customModule="Water" customModuleProvider="target">
-                                <rect key="frame" x="552" y="60" width="146" height="30"/>
-                                <state key="normal" title="Location"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -220,9 +216,6 @@
                         <inset key="imageInsets" minX="2" minY="3" maxX="4" maxY="4"/>
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-2"/>
                     </tabBarItem>
-                    <connections>
-                        <outlet property="LocationDrop" destination="wVF-iD-6lj" id="fS9-am-DME"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
@@ -277,7 +270,7 @@
         <!--First View Third-->
         <scene sceneID="Qxz-lN-Nrp">
             <objects>
-                <viewController id="2aO-ek-AYQ" customClass="FirstViewThird" customModule="Water" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="2aO-ek-AYQ" customClass="FirstViewThird" customModule="WaterManagement" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NK7-Lk-IWY"/>
                         <viewControllerLayoutGuide type="bottom" id="0hq-Us-7Bk"/>
@@ -348,7 +341,7 @@
         <!--First View Second-->
         <scene sceneID="a0i-UE-ZTc">
             <objects>
-                <viewController id="d1s-xd-dQP" customClass="FirstViewSecond" customModule="Water" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="d1s-xd-dQP" customClass="FirstViewSecond" customModule="WaterManagement" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pPJ-yS-jmL"/>
                         <viewControllerLayoutGuide type="bottom" id="ZkE-3i-Ap8"/>
@@ -424,7 +417,7 @@
         <!--System Health View Controller-->
         <scene sceneID="auj-L1-Kxr">
             <objects>
-                <viewController id="JhY-sz-58V" customClass="SystemHealthViewController" customModule="Water" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="JhY-sz-58V" customClass="SystemHealthViewController" customModule="WaterManagement" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="X7r-d8-pZG"/>
                         <viewControllerLayoutGuide type="bottom" id="62o-kU-2Mh"/>
@@ -523,7 +516,7 @@
         <!--Water Flow Details View Controller-->
         <scene sceneID="5s6-UJ-xIa">
             <objects>
-                <viewController id="u1N-7k-rCj" customClass="WaterFlowDetailsViewController" customModule="Water" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="u1N-7k-rCj" customClass="WaterFlowDetailsViewController" customModule="WaterManagement" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LxX-YT-n9p"/>
                         <viewControllerLayoutGuide type="bottom" id="oZT-Ty-2CL"/>
@@ -581,7 +574,7 @@
         <!--Location Sensor View Controller-->
         <scene sceneID="KrE-6E-Rab">
             <objects>
-                <viewController id="8a0-QZ-XWs" customClass="LocationSensorViewController" customModule="Water" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="8a0-QZ-XWs" customClass="LocationSensorViewController" customModule="WaterManagement" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="P7J-2g-qYO"/>
                         <viewControllerLayoutGuide type="bottom" id="Dch-ed-gBC"/>
@@ -668,7 +661,7 @@
         <!--Leak Detail View Controller-->
         <scene sceneID="hD6-oW-UdQ">
             <objects>
-                <viewController id="9NC-dY-hAq" customClass="LeakDetailViewController" customModule="Water" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9NC-dY-hAq" customClass="LeakDetailViewController" customModule="WaterManagement" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TU3-5D-nAO"/>
                         <viewControllerLayoutGuide type="bottom" id="qaG-Fp-XHe"/>
@@ -726,7 +719,7 @@
         <!--Consumption Analysis Chart View-->
         <scene sceneID="Xqz-2d-JD9">
             <objects>
-                <viewController id="b7d-0N-pB9" customClass="ConsumptionAnalysisChartView" customModule="Water" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="b7d-0N-pB9" customClass="ConsumptionAnalysisChartView" customModule="WaterManagement" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uch-ps-iZb"/>
                         <viewControllerLayoutGuide type="bottom" id="9EV-gc-eVo"/>
@@ -735,7 +728,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="485" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ELQ-ct-U8v" customClass="BarChartView" customModule="Charts">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ELQ-ct-U8v">
                                 <rect key="frame" x="25" y="29" width="434" height="283"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -789,7 +782,7 @@
         <!--Consumption Report View Controller-->
         <scene sceneID="RvT-Wl-8iT">
             <objects>
-                <viewController modalTransitionStyle="crossDissolve" id="aCw-cf-nbF" customClass="ConsumptionReportViewController" customModule="Water" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" id="aCw-cf-nbF" customClass="ConsumptionReportViewController" customModule="WaterManagement" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rdf-pw-QBf"/>
                         <viewControllerLayoutGuide type="bottom" id="us9-te-dTY"/>
@@ -798,7 +791,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v6C-Of-VND" customClass="BarChartView" customModule="Charts">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v6C-Of-VND">
                                 <rect key="frame" x="11" y="171" width="1003" height="564"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
