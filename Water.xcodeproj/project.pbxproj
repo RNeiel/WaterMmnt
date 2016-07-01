@@ -15,6 +15,20 @@
 		0FE0DE821D269CDC0041F6BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FE0DE801D269CDC0041F6BB /* LaunchScreen.storyboard */; };
 		0FE0DE8D1D269CDD0041F6BB /* WaterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE0DE8C1D269CDD0041F6BB /* WaterTests.swift */; };
 		0FE0DE981D269CDD0041F6BB /* WaterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE0DE971D269CDD0041F6BB /* WaterUITests.swift */; };
+		0FE0DEB11D269F9F0041F6BB /* ConsumptionAnalysisChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE0DEA51D269F9F0041F6BB /* ConsumptionAnalysisChartView.swift */; };
+		0FE0DEB21D269F9F0041F6BB /* ConsumptionReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE0DEA61D269F9F0041F6BB /* ConsumptionReportViewController.swift */; };
+		0FE0DEB31D269F9F0041F6BB /* EntranceToGoliathRoute.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0FE0DEA71D269F9F0041F6BB /* EntranceToGoliathRoute.plist */; };
+		0FE0DEB41D269F9F0041F6BB /* FirstViewSecond.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE0DEA81D269F9F0041F6BB /* FirstViewSecond.swift */; };
+		0FE0DEB51D269F9F0041F6BB /* FirstViewThird.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE0DEA91D269F9F0041F6BB /* FirstViewThird.swift */; };
+		0FE0DEB61D269F9F0041F6BB /* LeakDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE0DEAA1D269F9F0041F6BB /* LeakDetailViewController.swift */; };
+		0FE0DEB71D269F9F0041F6BB /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE0DEAB1D269F9F0041F6BB /* Location.swift */; };
+		0FE0DEB81D269F9F0041F6BB /* LocationSensorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE0DEAC1D269F9F0041F6BB /* LocationSensorViewController.swift */; };
+		0FE0DEB91D269F9F0041F6BB /* SystemHealthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE0DEAD1D269F9F0041F6BB /* SystemHealthViewController.swift */; };
+		0FE0DEBA1D269F9F0041F6BB /* WaterFlowDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE0DEAE1D269F9F0041F6BB /* WaterFlowDetailsViewController.swift */; };
+		0FE0DEBB1D269F9F0041F6BB /* WaterLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE0DEAF1D269F9F0041F6BB /* WaterLocation.swift */; };
+		0FE0DEBC1D269F9F0041F6BB /* WaterLocnDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE0DEB01D269F9F0041F6BB /* WaterLocnDetails.swift */; };
+		0FE0DEBE1D26A0EE0041F6BB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FE0DEBD1D26A0EE0041F6BB /* MapKit.framework */; };
+		73706AC81DA8F1314E9649D1 /* Pods_Water.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D25712CAD7FEA1DBB92AF1C /* Pods_Water.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		019A4D8880374858EF09F204 /* Pods-Water.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Water.release.xcconfig"; path = "Pods/Target Support Files/Pods-Water/Pods-Water.release.xcconfig"; sourceTree = "<group>"; };
 		0FE0DE721D269CDC0041F6BB /* Water.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Water.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FE0DE751D269CDC0041F6BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0FE0DE771D269CDC0041F6BB /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +64,21 @@
 		0FE0DE931D269CDD0041F6BB /* WaterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WaterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FE0DE971D269CDD0041F6BB /* WaterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterUITests.swift; sourceTree = "<group>"; };
 		0FE0DE991D269CDD0041F6BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0FE0DEA51D269F9F0041F6BB /* ConsumptionAnalysisChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumptionAnalysisChartView.swift; sourceTree = "<group>"; };
+		0FE0DEA61D269F9F0041F6BB /* ConsumptionReportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumptionReportViewController.swift; sourceTree = "<group>"; };
+		0FE0DEA71D269F9F0041F6BB /* EntranceToGoliathRoute.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = EntranceToGoliathRoute.plist; sourceTree = "<group>"; };
+		0FE0DEA81D269F9F0041F6BB /* FirstViewSecond.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewSecond.swift; sourceTree = "<group>"; };
+		0FE0DEA91D269F9F0041F6BB /* FirstViewThird.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewThird.swift; sourceTree = "<group>"; };
+		0FE0DEAA1D269F9F0041F6BB /* LeakDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeakDetailViewController.swift; sourceTree = "<group>"; };
+		0FE0DEAB1D269F9F0041F6BB /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		0FE0DEAC1D269F9F0041F6BB /* LocationSensorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationSensorViewController.swift; sourceTree = "<group>"; };
+		0FE0DEAD1D269F9F0041F6BB /* SystemHealthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemHealthViewController.swift; sourceTree = "<group>"; };
+		0FE0DEAE1D269F9F0041F6BB /* WaterFlowDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterFlowDetailsViewController.swift; sourceTree = "<group>"; };
+		0FE0DEAF1D269F9F0041F6BB /* WaterLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterLocation.swift; sourceTree = "<group>"; };
+		0FE0DEB01D269F9F0041F6BB /* WaterLocnDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterLocnDetails.swift; sourceTree = "<group>"; };
+		0FE0DEBD1D26A0EE0041F6BB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		2D25712CAD7FEA1DBB92AF1C /* Pods_Water.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Water.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7497645E159503205B4F2F38 /* Pods-Water.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Water.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Water/Pods-Water.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +86,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FE0DEBE1D26A0EE0041F6BB /* MapKit.framework in Frameworks */,
+				73706AC81DA8F1314E9649D1 /* Pods_Water.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +115,8 @@
 				0FE0DE8B1D269CDD0041F6BB /* WaterTests */,
 				0FE0DE961D269CDD0041F6BB /* WaterUITests */,
 				0FE0DE731D269CDC0041F6BB /* Products */,
+				25B0F041B482855B06B01EA3 /* Pods */,
+				FF8989A255435DD320AC9A37 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,6 +137,18 @@
 				0FE0DE771D269CDC0041F6BB /* FirstViewController.swift */,
 				0FE0DE791D269CDC0041F6BB /* SecondViewController.swift */,
 				0FE0DE7B1D269CDC0041F6BB /* Main.storyboard */,
+				0FE0DEA51D269F9F0041F6BB /* ConsumptionAnalysisChartView.swift */,
+				0FE0DEA61D269F9F0041F6BB /* ConsumptionReportViewController.swift */,
+				0FE0DEA71D269F9F0041F6BB /* EntranceToGoliathRoute.plist */,
+				0FE0DEA81D269F9F0041F6BB /* FirstViewSecond.swift */,
+				0FE0DEA91D269F9F0041F6BB /* FirstViewThird.swift */,
+				0FE0DEAA1D269F9F0041F6BB /* LeakDetailViewController.swift */,
+				0FE0DEAB1D269F9F0041F6BB /* Location.swift */,
+				0FE0DEAC1D269F9F0041F6BB /* LocationSensorViewController.swift */,
+				0FE0DEAD1D269F9F0041F6BB /* SystemHealthViewController.swift */,
+				0FE0DEAE1D269F9F0041F6BB /* WaterFlowDetailsViewController.swift */,
+				0FE0DEAF1D269F9F0041F6BB /* WaterLocation.swift */,
+				0FE0DEB01D269F9F0041F6BB /* WaterLocnDetails.swift */,
 				0FE0DE7E1D269CDC0041F6BB /* Assets.xcassets */,
 				0FE0DE801D269CDC0041F6BB /* LaunchScreen.storyboard */,
 				0FE0DE831D269CDC0041F6BB /* Info.plist */,
@@ -128,6 +174,24 @@
 			path = WaterUITests;
 			sourceTree = "<group>";
 		};
+		25B0F041B482855B06B01EA3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7497645E159503205B4F2F38 /* Pods-Water.debug.xcconfig */,
+				019A4D8880374858EF09F204 /* Pods-Water.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FF8989A255435DD320AC9A37 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0FE0DEBD1D26A0EE0041F6BB /* MapKit.framework */,
+				2D25712CAD7FEA1DBB92AF1C /* Pods_Water.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +199,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0FE0DE9C1D269CDD0041F6BB /* Build configuration list for PBXNativeTarget "Water" */;
 			buildPhases = (
+				F29DC9825E562E88ADC92429 /* [CP] Check Pods Manifest.lock */,
 				0FE0DE6E1D269CDC0041F6BB /* Sources */,
 				0FE0DE6F1D269CDC0041F6BB /* Frameworks */,
 				0FE0DE701D269CDC0041F6BB /* Resources */,
+				96C8F30AAEEE634CCE24B2A1 /* [CP] Embed Pods Frameworks */,
+				AD81C4CCF754349A762C46E9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -232,6 +299,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FE0DEB31D269F9F0041F6BB /* EntranceToGoliathRoute.plist in Resources */,
 				0FE0DE821D269CDC0041F6BB /* LaunchScreen.storyboard in Resources */,
 				0FE0DE7F1D269CDC0041F6BB /* Assets.xcassets in Resources */,
 				0FE0DE7D1D269CDC0041F6BB /* Main.storyboard in Resources */,
@@ -254,13 +322,72 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		96C8F30AAEEE634CCE24B2A1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Water/Pods-Water-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AD81C4CCF754349A762C46E9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Water/Pods-Water-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F29DC9825E562E88ADC92429 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0FE0DE6E1D269CDC0041F6BB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FE0DEB61D269F9F0041F6BB /* LeakDetailViewController.swift in Sources */,
+				0FE0DEB21D269F9F0041F6BB /* ConsumptionReportViewController.swift in Sources */,
+				0FE0DEB41D269F9F0041F6BB /* FirstViewSecond.swift in Sources */,
 				0FE0DE7A1D269CDC0041F6BB /* SecondViewController.swift in Sources */,
+				0FE0DEB91D269F9F0041F6BB /* SystemHealthViewController.swift in Sources */,
+				0FE0DEBB1D269F9F0041F6BB /* WaterLocation.swift in Sources */,
+				0FE0DEBC1D269F9F0041F6BB /* WaterLocnDetails.swift in Sources */,
+				0FE0DEB71D269F9F0041F6BB /* Location.swift in Sources */,
+				0FE0DEB11D269F9F0041F6BB /* ConsumptionAnalysisChartView.swift in Sources */,
+				0FE0DEBA1D269F9F0041F6BB /* WaterFlowDetailsViewController.swift in Sources */,
 				0FE0DE761D269CDC0041F6BB /* AppDelegate.swift in Sources */,
+				0FE0DEB81D269F9F0041F6BB /* LocationSensorViewController.swift in Sources */,
+				0FE0DEB51D269F9F0041F6BB /* FirstViewThird.swift in Sources */,
 				0FE0DE781D269CDC0041F6BB /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -403,6 +530,7 @@
 		};
 		0FE0DE9D1D269CDD0041F6BB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7497645E159503205B4F2F38 /* Pods-Water.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Water/Info.plist;
@@ -414,6 +542,7 @@
 		};
 		0FE0DE9E1D269CDD0041F6BB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 019A4D8880374858EF09F204 /* Pods-Water.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Water/Info.plist;
@@ -488,6 +617,7 @@
 				0FE0DE9E1D269CDD0041F6BB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0FE0DE9F1D269CDD0041F6BB /* Build configuration list for PBXNativeTarget "WaterTests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +626,7 @@
 				0FE0DEA11D269CDD0041F6BB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0FE0DEA21D269CDD0041F6BB /* Build configuration list for PBXNativeTarget "WaterUITests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +635,7 @@
 				0FE0DEA41D269CDD0041F6BB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
