@@ -139,6 +139,7 @@ class FirstViewController: UIViewController,MKMapViewDelegate {
             selectedLocn = Selectedannotation
             
             self.GLocation.Position = selectedLocn
+            self.GLocation.name = ((view.annotation?.title)!)!
             
             DetailsBtn.hidden = true
            // demSupply.hidden = false
@@ -149,6 +150,9 @@ class FirstViewController: UIViewController,MKMapViewDelegate {
             print(Selectedannotation)
         }
     }
+    
+    
+    
     
     func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer! {
         if overlay is MKCircle{

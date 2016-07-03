@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class FirstViewSecond: UIViewController {
+class FirstViewSecond: UIViewController,MKMapViewDelegate {
 
    // @IBOutlet weak var mapView2: MKMapView!
     
@@ -30,7 +30,10 @@ class FirstViewSecond: UIViewController {
         
         
         mapView2.setRegion(Hydet , animated: true)
-
+        
+        mapView2.delegate = self
+        
+        addRoute()
         
         
        }
@@ -38,6 +41,38 @@ class FirstViewSecond: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    
+    func addRoute() {
+        let thePath = NSBundle.mainBundle().pathForResource("EntranceToGoliathRoute", ofType: "plist")
+        let pointsArray = NSArray(contentsOfFile: thePath!)
+        
+        let pointsCount = pointsArray!.count
+        
+        var pointsToUse: [CLLocationCoordinate2D] = []
+        
+        for i in 0...pointsCount-1 {
+            let p = CGPointFromString(pointsArray![i] as! String)
+            pointsToUse += [CLLocationCoordinate2DMake(CLLocationDegrees(p.x), CLLocationDegrees(p.y))]
+        }
+        
+        let myPolyline = MKPolyline(coordinates: &pointsToUse, count: pointsCount)
+        
+        mapView2.addOverlay(myPolyline)
+    }
+    
+  
+    func mapView2(mapView2: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer! {
+        if overlay is MKPolyline {
+            let lineView = MKPolylineRenderer(overlay: overlay)
+            lineView.strokeColor = UIColor.greenColor()
+            
+            return lineView
+        }
+        
+        return nil
     }
     
 

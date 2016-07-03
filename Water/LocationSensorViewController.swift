@@ -17,7 +17,11 @@ class LocationSensorViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+         let GLocation = Location.sharedInstance
+        
+        locationName.text = GLocation.name
+        totalSensorCount.text = "20"
         // Do any additional setup after loading the view.
     }
 
@@ -25,6 +29,8 @@ class LocationSensorViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
     
 
     /*

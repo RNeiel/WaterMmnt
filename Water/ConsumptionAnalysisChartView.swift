@@ -41,9 +41,12 @@ class ConsumptionAnalysisChartView: UIViewController {
         }
         
         let chartDataSet = BarChartDataSet(yVals: dataEntries, label: "Consumption in gallons")
-        //chartDataSet.setColor(UIColor.orangeColor())
+       
         chartDataSet.colors = [UIColor.orangeColor(),UIColor.brownColor()]
-        let chartData = BarChartData(xVals: months, dataSet: chartDataSet)
+        
+        let dataSets: [BarChartDataSet] = [chartDataSet]
+        
+        let chartData = BarChartData(xVals: months, dataSets: dataSets)
         consumptionChart.data = chartData
         consumptionChart.leftAxis.drawGridLinesEnabled = false
         consumptionChart.rightAxis.drawGridLinesEnabled = false

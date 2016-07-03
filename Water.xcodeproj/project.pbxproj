@@ -28,8 +28,11 @@
 		0FE0DEBB1D269F9F0041F6BB /* WaterLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE0DEAF1D269F9F0041F6BB /* WaterLocation.swift */; };
 		0FE0DEBC1D269F9F0041F6BB /* WaterLocnDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE0DEB01D269F9F0041F6BB /* WaterLocnDetails.swift */; };
 		0FE0DEBE1D26A0EE0041F6BB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FE0DEBD1D26A0EE0041F6BB /* MapKit.framework */; };
-		0FE0DEC01D26A41E0041F6BB /* NiceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE0DEBF1D26A41E0041F6BB /* NiceButton.swift */; };
 		73706AC81DA8F1314E9649D1 /* Pods_Water.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D25712CAD7FEA1DBB92AF1C /* Pods_Water.framework */; };
+		81086F5E1D27536D00A02CDE /* NiceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81086F5D1D27536D00A02CDE /* NiceButton.swift */; };
+		81FF70501D28036C006C088C /* LeaderBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FF704F1D28036C006C088C /* LeaderBoardViewController.swift */; };
+		81FF70521D2902FB006C088C /* FlowAnalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FF70511D2902FB006C088C /* FlowAnalysisViewController.swift */; };
+		81FF70541D29058B006C088C /* FlowRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FF70531D29058B006C088C /* FlowRate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,9 +81,12 @@
 		0FE0DEAF1D269F9F0041F6BB /* WaterLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterLocation.swift; sourceTree = "<group>"; };
 		0FE0DEB01D269F9F0041F6BB /* WaterLocnDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterLocnDetails.swift; sourceTree = "<group>"; };
 		0FE0DEBD1D26A0EE0041F6BB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		0FE0DEBF1D26A41E0041F6BB /* NiceButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NiceButton.swift; path = "../../../Downloads/DropDown-master/Demo/NiceButton.swift"; sourceTree = "<group>"; };
 		2D25712CAD7FEA1DBB92AF1C /* Pods_Water.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Water.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7497645E159503205B4F2F38 /* Pods-Water.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Water.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Water/Pods-Water.debug.xcconfig"; sourceTree = "<group>"; };
+		81086F5D1D27536D00A02CDE /* NiceButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NiceButton.swift; sourceTree = "<group>"; };
+		81FF704F1D28036C006C088C /* LeaderBoardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderBoardViewController.swift; sourceTree = "<group>"; };
+		81FF70511D2902FB006C088C /* FlowAnalysisViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowAnalysisViewController.swift; sourceTree = "<group>"; };
+		81FF70531D29058B006C088C /* FlowRate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowRate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +119,8 @@
 		0FE0DE691D269CDB0041F6BB = {
 			isa = PBXGroup;
 			children = (
+				81FF70531D29058B006C088C /* FlowRate.swift */,
+				81FF70511D2902FB006C088C /* FlowAnalysisViewController.swift */,
 				0FE0DE741D269CDC0041F6BB /* Water */,
 				0FE0DE8B1D269CDD0041F6BB /* WaterTests */,
 				0FE0DE961D269CDD0041F6BB /* WaterUITests */,
@@ -139,7 +147,8 @@
 				0FE0DE771D269CDC0041F6BB /* FirstViewController.swift */,
 				0FE0DE791D269CDC0041F6BB /* SecondViewController.swift */,
 				0FE0DE7B1D269CDC0041F6BB /* Main.storyboard */,
-				0FE0DEBF1D26A41E0041F6BB /* NiceButton.swift */,
+				81FF704F1D28036C006C088C /* LeaderBoardViewController.swift */,
+				81086F5D1D27536D00A02CDE /* NiceButton.swift */,
 				0FE0DEA51D269F9F0041F6BB /* ConsumptionAnalysisChartView.swift */,
 				0FE0DEA61D269F9F0041F6BB /* ConsumptionReportViewController.swift */,
 				0FE0DEA71D269F9F0041F6BB /* EntranceToGoliathRoute.plist */,
@@ -378,9 +387,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0FE0DEC01D26A41E0041F6BB /* NiceButton.swift in Sources */,
+				81086F5E1D27536D00A02CDE /* NiceButton.swift in Sources */,
+				81FF70541D29058B006C088C /* FlowRate.swift in Sources */,
 				0FE0DEB61D269F9F0041F6BB /* LeakDetailViewController.swift in Sources */,
 				0FE0DEB21D269F9F0041F6BB /* ConsumptionReportViewController.swift in Sources */,
+				81FF70521D2902FB006C088C /* FlowAnalysisViewController.swift in Sources */,
 				0FE0DEB41D269F9F0041F6BB /* FirstViewSecond.swift in Sources */,
 				0FE0DE7A1D269CDC0041F6BB /* SecondViewController.swift in Sources */,
 				0FE0DEB91D269F9F0041F6BB /* SystemHealthViewController.swift in Sources */,
@@ -392,6 +403,7 @@
 				0FE0DE761D269CDC0041F6BB /* AppDelegate.swift in Sources */,
 				0FE0DEB81D269F9F0041F6BB /* LocationSensorViewController.swift in Sources */,
 				0FE0DEB51D269F9F0041F6BB /* FirstViewThird.swift in Sources */,
+				81FF70501D28036C006C088C /* LeaderBoardViewController.swift in Sources */,
 				0FE0DE781D269CDC0041F6BB /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

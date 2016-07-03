@@ -18,6 +18,12 @@ class SecondViewController: UIViewController {
     
     lazy var dropDowns: [DropDown] = {return [self.LocationDropBtn]}()
     
+    //MARK: - Actions
+    
+    @IBAction func LocnDropFn(sender: AnyObject) {
+        LocationDropBtn.show()
+    }
+   
     
     @IBAction func showKeyboard(sender: AnyObject) {
  //       textField.becomeFirstResponder()
@@ -50,6 +56,10 @@ class SecondViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupLocationDropDown()
+        dropDowns.forEach { $0.dismissMode = .OnTap }
+        dropDowns.forEach { $0.direction = .Any }
+        
         var Locations = ["Gachibowli",
                          "Nankram Guda",
                          "Golconda fort",
@@ -80,7 +90,7 @@ class SecondViewController: UIViewController {
     }
     
     
-    func setupChooseArticleDropDown() {
+    func setupLocationDropDown() {
         LocationDropBtn.anchorView = LocationDrop
         
         // Will set a custom with instead of anchor view width
