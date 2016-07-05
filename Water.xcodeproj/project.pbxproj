@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F93B9A91D2A4E6000C768D1 /* PressureChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F93B9A81D2A4E6000C768D1 /* PressureChartViewController.swift */; };
+		0F93B9AB1D2A506E00C768D1 /* QualityChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F93B9AA1D2A506E00C768D1 /* QualityChartViewController.swift */; };
 		0FE0DE761D269CDC0041F6BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE0DE751D269CDC0041F6BB /* AppDelegate.swift */; };
 		0FE0DE781D269CDC0041F6BB /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE0DE771D269CDC0041F6BB /* FirstViewController.swift */; };
 		0FE0DE7A1D269CDC0041F6BB /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE0DE791D269CDC0041F6BB /* SecondViewController.swift */; };
@@ -54,6 +56,8 @@
 
 /* Begin PBXFileReference section */
 		019A4D8880374858EF09F204 /* Pods-Water.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Water.release.xcconfig"; path = "Pods/Target Support Files/Pods-Water/Pods-Water.release.xcconfig"; sourceTree = "<group>"; };
+		0F93B9A81D2A4E6000C768D1 /* PressureChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PressureChartViewController.swift; sourceTree = "<group>"; };
+		0F93B9AA1D2A506E00C768D1 /* QualityChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QualityChartViewController.swift; sourceTree = "<group>"; };
 		0FE0DE721D269CDC0041F6BB /* Water.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Water.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FE0DE751D269CDC0041F6BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0FE0DE771D269CDC0041F6BB /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -147,6 +151,8 @@
 				0FE0DE771D269CDC0041F6BB /* FirstViewController.swift */,
 				0FE0DE791D269CDC0041F6BB /* SecondViewController.swift */,
 				0FE0DE7B1D269CDC0041F6BB /* Main.storyboard */,
+				0F93B9AA1D2A506E00C768D1 /* QualityChartViewController.swift */,
+				0F93B9A81D2A4E6000C768D1 /* PressureChartViewController.swift */,
 				81FF704F1D28036C006C088C /* LeaderBoardViewController.swift */,
 				81086F5D1D27536D00A02CDE /* NiceButton.swift */,
 				0FE0DEA51D269F9F0041F6BB /* ConsumptionAnalysisChartView.swift */,
@@ -395,7 +401,9 @@
 				0FE0DEB41D269F9F0041F6BB /* FirstViewSecond.swift in Sources */,
 				0FE0DE7A1D269CDC0041F6BB /* SecondViewController.swift in Sources */,
 				0FE0DEB91D269F9F0041F6BB /* SystemHealthViewController.swift in Sources */,
+				0F93B9A91D2A4E6000C768D1 /* PressureChartViewController.swift in Sources */,
 				0FE0DEBB1D269F9F0041F6BB /* WaterLocation.swift in Sources */,
+				0F93B9AB1D2A506E00C768D1 /* QualityChartViewController.swift in Sources */,
 				0FE0DEBC1D269F9F0041F6BB /* WaterLocnDetails.swift in Sources */,
 				0FE0DEB71D269F9F0041F6BB /* Location.swift in Sources */,
 				0FE0DEB11D269F9F0041F6BB /* ConsumptionAnalysisChartView.swift in Sources */,

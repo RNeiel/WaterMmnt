@@ -1,36 +1,27 @@
 //
-//  FlowAnalysisViewController.swift
+//  QualityChartViewController.swift
 //  Water
 //
-//  Created by Richard Neiel on 03/07/16.
+//  Created by IE3PMDP000046 on 04/07/16.
 //  Copyright © 2016 Honeywell. All rights reserved.
 //
 
 import UIKit
 import Charts
 
-class FlowAnalysisViewController: UIViewController,ChartViewDelegate {
+class QualityChartViewController: UIViewController,ChartViewDelegate {
 
-    @IBOutlet weak var flowChart: LineChartView!
-    
+    @IBOutlet weak var qualityChart: LineChartView!
     
     let months = ["Jan" , "Feb", "Mar", "Apr", "May", "June", "July", "August", "Sept", "Oct", "Nov", "Dec"]
     
-    let dollars1 = [1453.0,2352,5431,1442,5451,6486,1173,5678,9234,1345,9411,2212]
-    
+    let dollars1 = [20,22,24,21,24,26,20,23,22,24,23,25]
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.flowChart.delegate = self
-        // 2
-        self.flowChart.descriptionText = "Tap node for details"
-        // 3
-        self.flowChart.descriptionTextColor = UIColor.whiteColor()
-        self.flowChart.gridBackgroundColor = UIColor.darkGrayColor()
-        // 4
-        self.flowChart.noDataText = "No data provided"
-        // 5
+        // Do any additional setup after loading the view.
+        
         setChartData(months)
     }
 
@@ -39,24 +30,34 @@ class FlowAnalysisViewController: UIViewController,ChartViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
     
     func setChartData(months : [String]) {
         // 1 - creating an array of data entries
         var yVals1 : [ChartDataEntry] = [ChartDataEntry]()
         
         for i in 0 ..< months.count {
-            yVals1.append(ChartDataEntry(value: dollars1[i], xIndex: i))
+            yVals1.append(ChartDataEntry(value: Double(dollars1[i]), xIndex: i))
         }
         
         // 2 - create a data set with our array
         let set1: LineChartDataSet = LineChartDataSet(yVals: yVals1, label: "First Set")
         set1.axisDependency = .Left // Line will correlate with left axis values
-        set1.setColor(UIColor.redColor().colorWithAlphaComponent(0.5)) // our line's opacity is 50%
-        set1.setCircleColor(UIColor.redColor()) // our circle will be dark red
+        set1.setColor(UIColor.greenColor().colorWithAlphaComponent(0.5)) // our line's opacity is 50%
+        set1.setCircleColor(UIColor.greenColor()) // our circle will be dark red
         set1.lineWidth = 2.0
         set1.circleRadius = 6.0 // the radius of the node circle
         set1.fillAlpha = 65 / 255.0
-        set1.fillColor = UIColor.redColor()
+        set1.fillColor = UIColor.greenColor()
         set1.highlightColor = UIColor.whiteColor()
         set1.drawCircleHoleEnabled = false
         set1.drawCubicEnabled = true
@@ -70,23 +71,15 @@ class FlowAnalysisViewController: UIViewController,ChartViewDelegate {
         data.setValueTextColor(UIColor.whiteColor())
         
         
-        flowChart.leftAxis.drawGridLinesEnabled = false
-        flowChart.rightAxis.drawGridLinesEnabled = false
-        flowChart.xAxis.drawGridLinesEnabled = false
-        flowChart.drawGridBackgroundEnabled = false
+        qualityChart.leftAxis.drawGridLinesEnabled = false
+        qualityChart.rightAxis.drawGridLinesEnabled = false
+        qualityChart.xAxis.drawGridLinesEnabled = false
+        qualityChart.drawGridBackgroundEnabled = false
         
         //5 - finally set our data
-        self.flowChart.data = data
+        self.qualityChart.data = data
     }
+    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

@@ -7,9 +7,18 @@
 //
 
 import UIKit
+import Charts
 
 
-class ConsumptionReportViewController: UIViewController {
+class ConsumptionReportViewController: UIViewController,ChartViewDelegate {
+    
+    @IBOutlet weak var consumptionChart: BarChartView!
+    
+    
+    let months = ["Jan" , "Feb", "Mar", "Apr", "May", "June", "July", "August", "Sept", "Oct", "Nov", "Dec"]
+    
+    let dollars1 = [1453.0,2352,5431,1442,5451,6486,1173,5678,9234,1345,9411,2212]
+    
     
     @IBAction func cancelToSecondViewController(segue:UIStoryboardSegue) {
     }
@@ -17,6 +26,7 @@ class ConsumptionReportViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+         setConsumptionChartData(months, values: dollars1)
         
         // Do any additional setup after loading the view.
     }
@@ -26,6 +36,33 @@ class ConsumptionReportViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    func setConsumptionChartData(dataPoints: [String], values: [Double]) {
+        
+        var dataEntries: [BarChartDataEntry] = []
+        
+        for i in 0..<dataPoints.count {
+            let dataEntry = BarChartDataEntry(value: values[i], xIndex: i)
+            dataEntries.append(dataEntry)
+        }
+        
+        let chartDataSet = BarChartDataSet(yVals: dataEntries, label: "Consumption in gallons")
+        
+        chartDataSet.colors = [UIColor.orangeColor(),UIColor.orangeColor(),UIColor.orangeColor(),UIColor.orangeColor(),UIColor.orangeColor(),UIColor.orangeColor(),UIColor.orangeColor(),UIColor.orangeColor(),UIColor.brownColor(),UIColor.brownColor(),UIColor.brownColor(),UIColor.brownColor()]
+        
+        let dataSets: [BarChartDataSet] = [chartDataSet]
+        
+        let chartData = BarChartData(xVals: months, dataSets: dataSets)
+        consumptionChart.data = chartData
+        consumptionChart.leftAxis.drawGridLinesEnabled = false
+        consumptionChart.rightAxis.drawGridLinesEnabled = false
+        consumptionChart.xAxis.drawGridLinesEnabled = false
+        consumptionChart.drawGridBackgroundEnabled = false
+        consumptionChart.descriptionText = ""
+        consumptionChart.animate(xAxisDuration: 2.0, yAxisDuration: 2.0)
+        
+    }
+
 
     /*
     // MARK: - Navigation

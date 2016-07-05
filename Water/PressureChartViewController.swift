@@ -1,35 +1,35 @@
 //
-//  ConsumptionAnalysisChartView.swift
-//  WaterManagement
+//  PressureChartViewController.swift
+//  Water
 //
-//  Created by IE3PMDP000046 on 29/06/16.
+//  Created by IE3PMDP000046 on 04/07/16.
 //  Copyright © 2016 Honeywell. All rights reserved.
 //
-//
+
 import UIKit
 import Charts
-//
-class ConsumptionAnalysisChartView: UIViewController,ChartViewDelegate {
-  
-   
-    @IBOutlet weak var consumptionChart: BarChartView!
+
+class PressureChartViewController: UIViewController,ChartViewDelegate {
+
+    @IBOutlet var pressureChart: BarChartView!
     
     let months = ["Jan" , "Feb", "Mar", "Apr", "May", "June", "July", "August", "Sept", "Oct", "Nov", "Dec"]
     
-    let dollars1 = [1453.0,2352,5431,1442,5451,6486,1173,5678,9234,1345,9411,2212]
+    let dollars1 = [67,67.5,68,67,67,66.8,68,67,65,66,67,68]
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
-        //pass x-range, y-data, month or date details
-       setConsumptionChartData(months, values: dollars1)
-
+        
+        setConsumptionChartData(months, values: dollars1)
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
-       super.didReceiveMemoryWarning()
+        super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     
     func setConsumptionChartData(dataPoints: [String], values: [Double]) {
         
@@ -41,23 +41,22 @@ class ConsumptionAnalysisChartView: UIViewController,ChartViewDelegate {
         }
         
         let chartDataSet = BarChartDataSet(yVals: dataEntries, label: "Consumption in gallons")
-       
-        chartDataSet.colors = [UIColor.orangeColor(),UIColor.orangeColor(),UIColor.orangeColor(),UIColor.orangeColor(),UIColor.orangeColor(),UIColor.orangeColor(),UIColor.orangeColor(),UIColor.orangeColor(),UIColor.brownColor(),UIColor.brownColor(),UIColor.brownColor(),UIColor.brownColor()]
+        
+        chartDataSet.colors = [UIColor.darkGrayColor()]
         
         let dataSets: [BarChartDataSet] = [chartDataSet]
         
         let chartData = BarChartData(xVals: months, dataSets: dataSets)
-        consumptionChart.data = chartData
-        consumptionChart.leftAxis.drawGridLinesEnabled = false
-        consumptionChart.rightAxis.drawGridLinesEnabled = false
-        consumptionChart.xAxis.drawGridLinesEnabled = false
-        consumptionChart.drawGridBackgroundEnabled = false
-        consumptionChart.descriptionText = ""
-        consumptionChart.animate(xAxisDuration: 2.0, yAxisDuration: 2.0)
-    
+        pressureChart.data = chartData
+        pressureChart.leftAxis.drawGridLinesEnabled = false
+        pressureChart.rightAxis.drawGridLinesEnabled = false
+        pressureChart.xAxis.drawGridLinesEnabled = false
+        pressureChart.drawGridBackgroundEnabled = false
+        pressureChart.descriptionText = ""
+        pressureChart.animate(xAxisDuration: 2.0, yAxisDuration: 2.0)
+        
     }
     
-
     /*
     // MARK: - Navigation
 

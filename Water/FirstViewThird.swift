@@ -10,13 +10,59 @@ import UIKit
 import MapKit
 import Charts
 import Alamofire
+import Foundation
 
-class FirstViewThird: UIViewController {
+class FirstViewThird: UIViewController,ChartViewDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var consumptionChart: BarChartView!
     @IBOutlet weak var flowChart: LineChartView!
+    
+    var consumption: [Double] = []
+    var flow: [Int] = []
+    let months = ["Dec", "Jan" , "Feb", "Mar", "Apr", "May", "June"]
+    let time = ["12:00","12:15","12:30","12:45","01:00","01:15","01:30"]
    
+    var timer: dispatch_source_t!
+    
+    func startTimer() {
+        let queue = dispatch_queue_create("com.domain.app.timer", nil)
+        timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue)
+        dispatch_source_set_timer(timer, DISPATCH_TIME_NOW, 2 * NSEC_PER_SEC, 1 * NSEC_PER_SEC) // every 60 seconds, with leeway of 1 second
+        dispatch_source_set_event_handler(timer) {
+            // do whatever you want here
+            self.setConsumptionChartData(self.months, values: self.consumption)
+            self.setFlowChartData(self.time, values: self.flow)
+           
+        }
+        dispatch_resume(timer)
+    }
+    
+    func stopTimer() {
+        dispatch_source_cancel(timer)
+        timer = nil
+    }
+//    
+//    func startTimer2() {
+//        let queue = dispatch_queue_create("com.domain.app.timer", nil)
+//        timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue)
+//        dispatch_source_set_timer(timer, DISPATCH_TIME_NOW, 2 * NSEC_PER_SEC, 1 * NSEC_PER_SEC) // every 60 seconds, with leeway of 1 second
+//        dispatch_source_set_event_handler(timer) {
+//            // do whatever you want here
+//            self.setFlowChartData(self.time, values: self.flow)
+//            
+//        }
+//        dispatch_resume(timer)
+//    }
+//    
+//    func stopTimer2() {
+//        dispatch_source_cancel(timer)
+//        timer = nil
+//    }
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -35,7 +81,15 @@ class FirstViewThird: UIViewController {
         
         mapView.setRegion(Hydet , animated: true)
         
+        
+//        var timer = NSTimer.scheduledTimerWithTimeInterval(10, target: self, selector: Selector("self.setConsumptionChartData(self.months, values: self.consumption)"), userInfo: nil, repeats: true)
+        
         readConsumption()
+        readFlow()
+        
+        startTimer()
+        //startTimer2()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -90,65 +144,150 @@ class FirstViewThird: UIViewController {
                 
                 
                 print("Details:\(JSON[0]["ConsumptioninLitres"])")
-//                let id = JSON[0]["LocName"]
-//                print(id)
-//                let id2 = JSON[1]["LocName"]
-//                print(id2)
-//                
-//                
-//                for index in JSON as! [AnyObject]{
-//                    
-//                    guard let id = index["LocId"] as? Int
-//                        else
-//                    {
-//                        return}
-//                    
-//                    guard let latitude = index["LocLat"] as? String
-//                        else
-//                    {
-//                        return}
-//                    
-//                    guard let longitude = index["LocLong"] as? String
-//                        else
-//                    {
-//                        return}
-//                    
-//                    guard let health = index["LocHealth"] as? Int
-//                        else
-//                    {
-//                        return}
-//                    
-//                    guard let name = index["LocName"] as? String
-//                        else
-//                    {
-//                        return}
-//                    
-//                    
-//                    
-//                    print(id)
-//                    
-//                    let loc = WaterLocnDetails(locID: id,locLong: latitude,locLat: longitude,locHealth: health,locName: name)
-//                    self.locationArray.append(loc)
-                
+                print("Details:\(JSON[1]["ConsumptioninLitres"])")
+                print("Details:\(JSON[2]["ConsumptioninLitres"])")
+        
+
+                for index in JSON as! [AnyObject]{
+                    
+                   guard let id = index["ConsumptioninLitres"] as? Double
+                    else
+                    {
+                        return
+                    }
+                    
+                    
+                    print(id)
+
+                    self.consumption.append(id)
                     
                 }
-                
-                
-                
             }
-    
-    
-    }
-    
-    
-    /*
-    // MARK: - Navigation
+        }
+        
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
     }
-    */
+    
+    func readFlow()
+    {
+        
+        
+        Alamofire.request(.GET, "https://honwaterserviceapi.azurewebsites.net/api/Flow", parameters: ["foo" : "bar"]) .responseJSON { response in
+            
+            if let JSON = response.result.value {
+                print("JSON: \(JSON)")
+                
+                
+                print("Details:\(JSON[0]["FlowActual"])")
+                print("Details:\(JSON[1]["FlowActual"])")
+                print("Details:\(JSON[2]["FlowActual"])")
+                
+                
+                for index2 in JSON as! [AnyObject]{
+                    
+                    print(index2["FlowActual"])
+                    
+                    //var val:Int = index["FlowActual"]
+                    
+                    guard let id2 = index2["FlowActual"] as? Int
+                        else
+                    {
+                        self.flow = [4,3,7,6,1,9,8]
+                        return
+                    }
+                    
+                    
+                    print(id2)
+                    
+                    self.flow.append(id2)
+                    
+                }
+            }
+            
+            print(self.flow)
+        }
+        
+        
+    }
+    
+    
+    func setConsumptionChartData(dataPoints: [String], values: [Double]) {
+        
+        var dataEntries: [BarChartDataEntry] = []
+        
+        if(values.count == 0){return}
+        
+        for i in 0..<dataPoints.count {
+            let dataEntry = BarChartDataEntry(value: (values[i]), xIndex: i)
+            dataEntries.append(dataEntry)
+        }
+        
+        let chartDataSet = BarChartDataSet(yVals: dataEntries, label: "Consumption in gallons")
+        
+        chartDataSet.colors = [UIColor.orangeColor()]
+        
+        let dataSets: [BarChartDataSet] = [chartDataSet]
+        
+        let chartData = BarChartData(xVals: months, dataSets: dataSets)
+        consumptionChart.data = chartData
+        consumptionChart.leftAxis.drawGridLinesEnabled = false
+        consumptionChart.rightAxis.drawGridLinesEnabled = false
+        consumptionChart.xAxis.drawGridLinesEnabled = false
+        consumptionChart.drawGridBackgroundEnabled = false
+        consumptionChart.descriptionText = ""
+        consumptionChart.animate(xAxisDuration: 2.0, yAxisDuration: 2.0)
+        
+       // stopTimer()
+        
+    }
+    
+    
+    func setFlowChartData(time : [String], values: [Int]) {
+        // 1 - creating an array of data entries
+        var yVals1 : [ChartDataEntry] = [ChartDataEntry]()
+        
+        
+        if(values.count == 0)
+        {
+            return
+        }
+        for i in 0 ..< time.count {
+            yVals1.append(ChartDataEntry(value: Double(values[i]), xIndex: i))
+        }
+        
+        // 2 - create a data set with our array
+        let set1: LineChartDataSet = LineChartDataSet(yVals: yVals1, label: "Flow Rate")
+        set1.axisDependency = .Left // Line will correlate with left axis values
+        set1.setColor(UIColor.redColor().colorWithAlphaComponent(0.5)) // our line's opacity is 50%
+        //set1.setCircleColor(UIColor.redColor()) // our circle will be dark red
+        set1.lineWidth = 2.0
+        //set1.circleRadius = 6.0 // the radius of the node circle
+        set1.fillAlpha = 65 / 255.0
+        set1.fillColor = UIColor.blueColor()
+        set1.highlightColor = UIColor.whiteColor()
+        //set1.drawCircleHoleEnabled = true
+        set1.drawCubicEnabled = true
+        
+        //3 - create an array to store our LineChartDataSets
+        var dataSets : [LineChartDataSet] = [LineChartDataSet]()
+        dataSets.append(set1)
+        
+        //4 - pass our months in for our x-axis label value along with our dataSets
+        let data: LineChartData = LineChartData(xVals: months, dataSets: dataSets)
+        data.setValueTextColor(UIColor.whiteColor())
+        
+        flowChart.descriptionText = "in kiloLitres"
+        flowChart.leftAxis.drawGridLinesEnabled = false
+        flowChart.rightAxis.drawGridLinesEnabled = false
+        flowChart.xAxis.drawGridLinesEnabled = false
+        flowChart.drawGridBackgroundEnabled = false
+        
+        //5 - finally set our data
+        self.flowChart.data = data
+        
+        stopTimer()
+    }
+
+    
 
 }

@@ -16,14 +16,14 @@ class LeaderBoardViewController: UIViewController, UITableViewDelegate, UITableV
     
     @IBOutlet weak var leaderChart: BarChartView!
     
-    var items: [String] = ["We", "Heart", "Swift","","","","","",""]
-    var items_2: [String] = ["We", "Heart", "Swift","","","","","",""]
+    var items: [String] = ["4 Nampally", "5 Banjara Hills", "6 Q City","7 Hi tech City"," Madhapur","Kukatpally","Jubilee Hills","Gachibowli","Secunderabad"]
+    var items_2: [String] = ["9", "10", "10.5","10.6","11","12","15","16","18"]
     
     let months = ["Jan" , "Feb", "Mar", "Apr", "May", "June", "July", "August", "Sept", "Oct", "Nov", "Dec"]
     
-    let dollars1 = [1453.0,2352,5431,1442,5451,6486,1173,5678,9234,1345,9411,2212]
-    let unitsBought = [20.0, 4.0, 6.0, 3.0, 12.0, 16.0, 4.0, 18.0, 2.0, 4.0, 5.0, 12.8]
-    let unitsBought2 = [20.0, 4.0, 6.0, 3.0, 12.0, 16.0, 4.0, 18.0, 2.0, 4.0, 5.0, 12.8]
+    let dollars1 = [20.0, 4.0, 26.0, 33.0, 19.0, 36.0, 43.0, 48.0, 26.0, 24.0, 52.0, 42.8]
+    let unitsBought = [20.0, 24.0, 6.0, 3.0, 12.0, 16.0, 24.0, 18.0, 22.0, 44.0, 35.0, 12.8]
+    let unitsBought2 = [26.0, 14.0, 64.0, 32.0, 32.0, 14.0, 43.0, 18.0, 44.0, 42.0, 51.0, 32.8]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,9 +73,9 @@ class LeaderBoardViewController: UIViewController, UITableViewDelegate, UITableV
     
     func tableView_details(tableView_details: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell")! as UITableViewCell
+        var cell:UITableViewCell = self.tableView_details.dequeueReusableCellWithIdentifier("cell")! as UITableViewCell
         
-        cell.textLabel?.text = self.items[indexPath.row]
+        cell.textLabel?.text = self.items_2[indexPath.row]
         
         return cell
     }
@@ -122,9 +122,9 @@ class LeaderBoardViewController: UIViewController, UITableViewDelegate, UITableV
         let chartDataSet3 = BarChartDataSet(yVals: dataEntries3, label: "City3")
         
         //chartDataSet.setColor(UIColor.orangeColor())
-        chartDataSet.colors = [UIColor.orangeColor(),UIColor.brownColor()]
-        chartDataSet2.colors = [UIColor.blackColor(),UIColor.greenColor()]
-        chartDataSet3.colors = [UIColor.blueColor(),UIColor.cyanColor()]
+        chartDataSet.colors = [UIColor.greenColor()]
+        chartDataSet2.colors = [UIColor.yellowColor()]
+        chartDataSet3.colors = [UIColor.blueColor()]
         
         let dataSets: [BarChartDataSet] = [chartDataSet,chartDataSet2, chartDataSet3]
         
