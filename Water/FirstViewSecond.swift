@@ -11,9 +11,8 @@ import MapKit
 
 class FirstViewSecond: UIViewController,MKMapViewDelegate {
 
-   // @IBOutlet weak var mapView2: MKMapView!
-    
-    @IBOutlet weak var mapView2: MKMapView!
+ 
+    @IBOutlet weak var mapView: MKMapView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,12 +25,12 @@ class FirstViewSecond: UIViewController,MKMapViewDelegate {
         print( GLocation )
         
         
-        let Hydet = MKCoordinateRegionMake(GLocation.Position,MKCoordinateSpanMake(0.05, 0.05))
+        let Hydet = MKCoordinateRegionMake(GLocation.Position,MKCoordinateSpanMake(0.02, 0.02))
         
         
-        mapView2.setRegion(Hydet , animated: true)
+        mapView.setRegion(Hydet , animated: true)
         
-        mapView2.delegate = self
+        mapView.delegate = self
         
         addRoute()
         
@@ -60,14 +59,15 @@ class FirstViewSecond: UIViewController,MKMapViewDelegate {
         
         let myPolyline = MKPolyline(coordinates: &pointsToUse, count: pointsCount)
         
-        mapView2.addOverlay(myPolyline)
+        
+        mapView.addOverlay(myPolyline)
     }
     
   
-    func mapView2(mapView2: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer! {
+    func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer! {
         if overlay is MKPolyline {
             let lineView = MKPolylineRenderer(overlay: overlay)
-            lineView.strokeColor = UIColor.greenColor()
+            lineView.strokeColor = UIColor.redColor()
             
             return lineView
         }

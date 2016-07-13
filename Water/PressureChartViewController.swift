@@ -42,7 +42,7 @@ class PressureChartViewController: UIViewController,ChartViewDelegate {
         
         let chartDataSet = BarChartDataSet(yVals: dataEntries, label: "Consumption in gallons")
         
-        chartDataSet.colors = [UIColor.darkGrayColor()]
+        chartDataSet.colors = [UIColor(red: 151/255, green: 128/255, blue: 163/255, alpha: 1.0)]
         
         let dataSets: [BarChartDataSet] = [chartDataSet]
         

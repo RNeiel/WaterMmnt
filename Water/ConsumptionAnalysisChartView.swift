@@ -41,8 +41,17 @@ class ConsumptionAnalysisChartView: UIViewController,ChartViewDelegate {
         }
         
         let chartDataSet = BarChartDataSet(yVals: dataEntries, label: "Consumption in gallons")
+        
+        let color1: UIColor = UIColor(red: 252/255, green: 169/255, blue: 121/255, alpha: 1.0)
+        let color2: UIColor = UIColor(red: 252/255, green: 223/255, blue: 207/255, alpha: 1.0)
+        
+        var colors:[UIColor]
+        
+//        for j in 0..<dataPoints.count{
+//                colors[j] = color1
+//        }
        
-        chartDataSet.colors = [UIColor.orangeColor(),UIColor.orangeColor(),UIColor.orangeColor(),UIColor.orangeColor(),UIColor.orangeColor(),UIColor.orangeColor(),UIColor.orangeColor(),UIColor.orangeColor(),UIColor.brownColor(),UIColor.brownColor(),UIColor.brownColor(),UIColor.brownColor()]
+        chartDataSet.colors = [color1,color1,color1,color1,color1,color1,color1,color2,color2,color2,color2,color2]
         
         let dataSets: [BarChartDataSet] = [chartDataSet]
         

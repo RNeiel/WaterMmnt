@@ -12,12 +12,13 @@ import Charts
 class LeaderBoardViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet var tableView: UITableView!
-    @IBOutlet var tableView_details: UITableView!
+ 
+    @IBOutlet weak var tableView_details: UITableView!
     
     @IBOutlet weak var leaderChart: BarChartView!
     
-    var items: [String] = ["4 Nampally", "5 Banjara Hills", "6 Q City","7 Hi tech City"," Madhapur","Kukatpally","Jubilee Hills","Gachibowli","Secunderabad"]
-    var items_2: [String] = ["9", "10", "10.5","10.6","11","12","15","16","18"]
+    var items: [String] = ["4 Nampally", "5 Banjara Hills", "6 Q City","7 Hi tech City","8 Madhapur","9 Kukatpally","10 Jubilee Hills","11 Gachibowli","12 Secunderabad"]
+    var values: [String] = ["9", "10", "10.5","10.6","11","12","15","16","18"]
     
     let months = ["Jan" , "Feb", "Mar", "Apr", "May", "June", "July", "August", "Sept", "Oct", "Nov", "Dec"]
     
@@ -29,7 +30,7 @@ class LeaderBoardViewController: UIViewController, UITableViewDelegate, UITableV
         super.viewDidLoad()
         
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        self.tableView_details.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        self.tableView_details.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell2")
         
         setLeaderChartData(months, values1: dollars1, values2: unitsBought, values3: unitsBought2)
         
@@ -41,6 +42,8 @@ class LeaderBoardViewController: UIViewController, UITableViewDelegate, UITableV
         // Dispose of any resources that can be recreated.
     }
     
+    
+    //for names
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 9
         //return self.items.count
@@ -56,14 +59,16 @@ class LeaderBoardViewController: UIViewController, UITableViewDelegate, UITableV
         return cell
     }
     
-    
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 2
-    }
+//    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+//        return 2
+//    }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
     }
+
+    
+    //for values
     
     func tableView_details(tableView_details: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 9
@@ -73,11 +78,11 @@ class LeaderBoardViewController: UIViewController, UITableViewDelegate, UITableV
     
     func tableView_details(tableView_details: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        var cell:UITableViewCell = self.tableView_details.dequeueReusableCellWithIdentifier("cell")! as UITableViewCell
+        var cell2:UITableViewCell = self.tableView_details.dequeueReusableCellWithIdentifier("cell2")! as UITableViewCell
         
-        cell.textLabel?.text = self.items_2[indexPath.row]
+        cell2.textLabel?.text = self.values[indexPath.row]
         
-        return cell
+        return cell2
     }
     
     func tableView_details(tableView_details: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -122,9 +127,9 @@ class LeaderBoardViewController: UIViewController, UITableViewDelegate, UITableV
         let chartDataSet3 = BarChartDataSet(yVals: dataEntries3, label: "City3")
         
         //chartDataSet.setColor(UIColor.orangeColor())
-        chartDataSet.colors = [UIColor.greenColor()]
-        chartDataSet2.colors = [UIColor.yellowColor()]
-        chartDataSet3.colors = [UIColor.blueColor()]
+        chartDataSet.colors = [UIColor(red: 210/255, green: 234/255, blue: 187/255, alpha: 1.0)]
+        chartDataSet2.colors = [UIColor(red: 242/255, green: 238/255, blue: 164/255, alpha: 1.0) ]
+        chartDataSet3.colors = [UIColor(red: 200/255, green: 233/255, blue: 247/255, alpha: 1.0)]
         
         let dataSets: [BarChartDataSet] = [chartDataSet,chartDataSet2, chartDataSet3]
         

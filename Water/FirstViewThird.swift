@@ -12,8 +12,9 @@ import Charts
 import Alamofire
 import Foundation
 
-class FirstViewThird: UIViewController,ChartViewDelegate {
+class FirstViewThird: UIViewController,ChartViewDelegate,MKMapViewDelegate {
 
+    
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var consumptionChart: BarChartView!
     @IBOutlet weak var flowChart: LineChartView!
@@ -31,9 +32,10 @@ class FirstViewThird: UIViewController,ChartViewDelegate {
         dispatch_source_set_timer(timer, DISPATCH_TIME_NOW, 2 * NSEC_PER_SEC, 1 * NSEC_PER_SEC) // every 60 seconds, with leeway of 1 second
         dispatch_source_set_event_handler(timer) {
             // do whatever you want here
-            self.setConsumptionChartData(self.months, values: self.consumption)
             self.setFlowChartData(self.time, values: self.flow)
-           
+
+            self.setConsumptionChartData(self.months, values: self.consumption)
+            
         }
         dispatch_resume(timer)
     }
@@ -42,27 +44,8 @@ class FirstViewThird: UIViewController,ChartViewDelegate {
         dispatch_source_cancel(timer)
         timer = nil
     }
-//    
-//    func startTimer2() {
-//        let queue = dispatch_queue_create("com.domain.app.timer", nil)
-//        timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue)
-//        dispatch_source_set_timer(timer, DISPATCH_TIME_NOW, 2 * NSEC_PER_SEC, 1 * NSEC_PER_SEC) // every 60 seconds, with leeway of 1 second
-//        dispatch_source_set_event_handler(timer) {
-//            // do whatever you want here
-//            self.setFlowChartData(self.time, values: self.flow)
-//            
-//        }
-//        dispatch_resume(timer)
-//    }
-//    
-//    func stopTimer2() {
-//        dispatch_source_cancel(timer)
-//        timer = nil
-//    }
-    
-    
-    
-    
+
+   
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -70,25 +53,22 @@ class FirstViewThird: UIViewController,ChartViewDelegate {
         
         let GLocation = Location.sharedInstance
         
-        // mapView.delegate = self
+         mapView.delegate = self
         
         print ("I am in second")
         print( GLocation )
         
         
-        let Hydet = MKCoordinateRegionMake(GLocation.Position,MKCoordinateSpanMake(0.05, 0.05))
-        
+        let Hydet = MKCoordinateRegionMake(GLocation.Position,MKCoordinateSpanMake(0.02, 0.02))
         
         mapView.setRegion(Hydet , animated: true)
-        
-        
-//        var timer = NSTimer.scheduledTimerWithTimeInterval(10, target: self, selector: Selector("self.setConsumptionChartData(self.months, values: self.consumption)"), userInfo: nil, repeats: true)
         
         readConsumption()
         readFlow()
         
         startTimer()
-        //startTimer2()
+        
+        addRoute()
         
     }
 
@@ -112,26 +92,21 @@ class FirstViewThird: UIViewController,ChartViewDelegate {
         
         let myPolyline = MKPolyline(coordinates: &pointsToUse, count: pointsCount)
         
+        
         mapView.addOverlay(myPolyline)
     }
     
+    
     func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer! {
-        if overlay is MKCircle{
-            let circleRenderer = MKCircleRenderer(overlay: overlay)
-            circleRenderer.fillColor = UIColor(red: 1, green: 165/255, blue: 0, alpha: 0.2)
-            return circleRenderer
-        }
-        
         if overlay is MKPolyline {
             let lineView = MKPolylineRenderer(overlay: overlay)
-            lineView.strokeColor = UIColor.blueColor()
+            lineView.strokeColor = UIColor.redColor()
             
             return lineView
         }
         
         return nil
     }
-
     
     func readConsumption()
     {
@@ -177,22 +152,12 @@ class FirstViewThird: UIViewController,ChartViewDelegate {
             if let JSON = response.result.value {
                 print("JSON: \(JSON)")
                 
-                
-                print("Details:\(JSON[0]["FlowActual"])")
-                print("Details:\(JSON[1]["FlowActual"])")
-                print("Details:\(JSON[2]["FlowActual"])")
-                
-                
                 for index2 in JSON as! [AnyObject]{
-                    
-                    print(index2["FlowActual"])
-                    
-                    //var val:Int = index["FlowActual"]
+
                     
                     guard let id2 = index2["FlowActual"] as? Int
                         else
                     {
-                        self.flow = [4,3,7,6,1,9,8]
                         return
                     }
                     
@@ -203,8 +168,7 @@ class FirstViewThird: UIViewController,ChartViewDelegate {
                     
                 }
             }
-            
-            print(self.flow)
+          
         }
         
         
@@ -236,6 +200,8 @@ class FirstViewThird: UIViewController,ChartViewDelegate {
         consumptionChart.drawGridBackgroundEnabled = false
         consumptionChart.descriptionText = ""
         consumptionChart.animate(xAxisDuration: 2.0, yAxisDuration: 2.0)
+        
+        
         
        // stopTimer()
         
@@ -273,7 +239,7 @@ class FirstViewThird: UIViewController,ChartViewDelegate {
         dataSets.append(set1)
         
         //4 - pass our months in for our x-axis label value along with our dataSets
-        let data: LineChartData = LineChartData(xVals: months, dataSets: dataSets)
+        let data: LineChartData = LineChartData(xVals: time, dataSets: dataSets)
         data.setValueTextColor(UIColor.whiteColor())
         
         flowChart.descriptionText = "in kiloLitres"
@@ -285,7 +251,10 @@ class FirstViewThird: UIViewController,ChartViewDelegate {
         //5 - finally set our data
         self.flowChart.data = data
         
+        
         stopTimer()
+
+       
     }
 
     
