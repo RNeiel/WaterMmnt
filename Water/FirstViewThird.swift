@@ -26,24 +26,24 @@ class FirstViewThird: UIViewController,ChartViewDelegate,MKMapViewDelegate {
    
     var timer: dispatch_source_t!
     
-    func startTimer() {
-        let queue = dispatch_queue_create("com.domain.app.timer", nil)
-        timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue)
-        dispatch_source_set_timer(timer, DISPATCH_TIME_NOW, 2 * NSEC_PER_SEC, 1 * NSEC_PER_SEC) // every 60 seconds, with leeway of 1 second
-        dispatch_source_set_event_handler(timer) {
-            // do whatever you want here
-            self.setFlowChartData(self.time, values: self.flow)
-
-            self.setConsumptionChartData(self.months, values: self.consumption)
-            
-        }
-        dispatch_resume(timer)
-    }
-    
-    func stopTimer() {
-        dispatch_source_cancel(timer)
-        timer = nil
-    }
+//    func startTimer() {
+//        let queue = dispatch_queue_create("com.domain.app.timer", nil)
+//        timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue)
+//        dispatch_source_set_timer(timer, DISPATCH_TIME_NOW, 2 * NSEC_PER_SEC, 1 * NSEC_PER_SEC) // every 60 seconds, with leeway of 1 second
+//        dispatch_source_set_event_handler(timer) {
+//            // do whatever you want here
+//            
+//
+//            
+//            
+//        }
+//        dispatch_resume(timer)
+//    }
+//    
+//    func stopTimer() {
+//        dispatch_source_cancel(timer)
+//        timer = nil
+//    }
 
    
     override func viewDidLoad() {
@@ -65,8 +65,6 @@ class FirstViewThird: UIViewController,ChartViewDelegate,MKMapViewDelegate {
         
         readConsumption()
         readFlow()
-        
-        startTimer()
         
         addRoute()
         
@@ -138,6 +136,8 @@ class FirstViewThird: UIViewController,ChartViewDelegate,MKMapViewDelegate {
                     
                 }
             }
+            self.setConsumptionChartData(self.months, values: self.consumption)
+            
         }
         
 
@@ -168,7 +168,8 @@ class FirstViewThird: UIViewController,ChartViewDelegate,MKMapViewDelegate {
                     
                 }
             }
-          
+         
+         self.setFlowChartData(self.time, values: self.flow)
         }
         
         
@@ -201,9 +202,6 @@ class FirstViewThird: UIViewController,ChartViewDelegate,MKMapViewDelegate {
         consumptionChart.descriptionText = ""
         consumptionChart.animate(xAxisDuration: 2.0, yAxisDuration: 2.0)
         
-        
-        
-       // stopTimer()
         
     }
     
@@ -251,9 +249,6 @@ class FirstViewThird: UIViewController,ChartViewDelegate,MKMapViewDelegate {
         //5 - finally set our data
         self.flowChart.data = data
         
-        
-        stopTimer()
-
        
     }
 

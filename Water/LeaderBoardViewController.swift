@@ -18,6 +18,8 @@ class LeaderBoardViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var leaderChart: BarChartView!
     
     var items: [String] = ["4 Nampally", "5 Banjara Hills", "6 Q City","7 Hi tech City","8 Madhapur","9 Kukatpally","10 Jubilee Hills","11 Gachibowli","12 Secunderabad"]
+    var items_2: [String] = ["9", "10", "10.5","10.6","11","12","15","16","18"]
+    
     var values: [String] = ["9", "10", "10.5","10.6","11","12","15","16","18"]
     
     let months = ["Jan" , "Feb", "Mar", "Apr", "May", "June", "July", "August", "Sept", "Oct", "Nov", "Dec"]
@@ -30,11 +32,9 @@ class LeaderBoardViewController: UIViewController, UITableViewDelegate, UITableV
         super.viewDidLoad()
         
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        self.tableView_details.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell2")
+        self.tableView_details.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell1")
         
         setLeaderChartData(months, values1: dollars1, values2: unitsBought, values3: unitsBought2)
-        
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,63 +43,51 @@ class LeaderBoardViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     
-    //for names
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 9
-        //return self.items.count
-    
+        
+        var count:Int?
+        
+        if tableView == self.tableView {
+            count = 9
+        }
+        
+        if tableView == self.tableView_details {
+            count = 9
+        }
+        
+        return count!
+        
+        
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-       
-        var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell")! as UITableViewCell
         
-        cell.textLabel?.text = self.items[indexPath.row]
+        var  cell:UITableViewCell?
         
-        return cell
+        if tableView == self.tableView {
+            cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
+            cell!.textLabel?.text = self.items[indexPath.row]
+            
+        }
+        
+        if tableView == self.tableView_details {
+            cell = tableView.dequeueReusableCellWithIdentifier("cell1", forIndexPath: indexPath)
+            cell!.textLabel?.text = self.items_2[indexPath.row]
+            
+        }
+        
+        return cell!
+        
     }
     
-//    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-//        return 2
-//    }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 2
+    }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
     }
-
-    
-    //for values
-    
-    func tableView_details(tableView_details: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 9
-        //return self.items.count
-        
-    }
-    
-    func tableView_details(tableView_details: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-        var cell2:UITableViewCell = self.tableView_details.dequeueReusableCellWithIdentifier("cell2")! as UITableViewCell
-        
-        cell2.textLabel?.text = self.values[indexPath.row]
-        
-        return cell2
-    }
-    
-    func tableView_details(tableView_details: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
-    }
-
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     func setLeaderChartData(dataPoints: [String], values1: [Double],values2: [Double],values3: [Double]) {
         
